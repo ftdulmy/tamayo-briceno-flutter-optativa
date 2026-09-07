@@ -24,6 +24,22 @@ class _ActionButtonState extends State<ActionButton> {
       widget.result.clear();
       widget.number1.clear();
       widget.number2.clear();
+    } else if (widget.labelAction == "+") {
+      double sum =
+          double.parse(widget.number1.text) + double.parse(widget.number2.text);
+      widget.result.text = sum.toString();
+    } else if (widget.labelAction == "-") {
+      double difference =
+          double.parse(widget.number1.text) - double.parse(widget.number2.text);
+      widget.result.text = difference.toString();
+    } else if (widget.labelAction == "*") {
+      double product =
+          double.parse(widget.number1.text) * double.parse(widget.number2.text);
+      widget.result.text = product.toString();
+    } else if (widget.labelAction == "/") {
+      double quotient =
+          double.parse(widget.number1.text) / double.parse(widget.number2.text);
+      widget.result.text = quotient.toString();
     }
   }
 

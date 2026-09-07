@@ -145,6 +145,46 @@ class MainApp extends StatelessWidget {
                   labelAction: 'CLEAR',
                 ),
               ),
+              const SizedBox(height: 16.0),
+              Row(
+                children: [
+                  Expanded(
+                    child: ActionButton(
+                      result: result,
+                      number1: num1,
+                      number2: num2,
+                      labelAction: '+',
+                    ),
+                  ),
+                  const SizedBox(width: 16.0),
+                  Expanded(
+                    child: ActionButton(
+                      result: result,
+                      number1: num1,
+                      number2: num2,
+                      labelAction: '-',
+                    ),
+                  ),
+                  const SizedBox(width: 16.0),
+                  Expanded(
+                    child: ActionButton(
+                      result: result,
+                      number1: num1,
+                      number2: num2,
+                      labelAction: '*',
+                    ),
+                  ),
+                  const SizedBox(width: 16.0),
+                  Expanded(
+                    child: ActionButton(
+                      result: result,
+                      number1: num1,
+                      number2: num2,
+                      labelAction: '/',
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),

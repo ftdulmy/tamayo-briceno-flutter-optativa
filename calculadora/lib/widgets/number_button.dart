@@ -20,7 +20,13 @@ class _NumberButtonState extends State<NumberButton> {
   @override
   Widget build(BuildContext context) {
     void setNumber() {
-      widget.controller.text += widget.labelNumber;
+      if (widget.controller.text.isEmpty) {
+        widget.controller.text = widget.labelNumber;
+      } else if (widget.controller2.text.isEmpty) {
+        widget.controller2.text = widget.labelNumber;
+      } else {
+        widget.controller.text += widget.labelNumber;
+      }
     }
 
     return ElevatedButton(
