@@ -130,19 +130,23 @@ class MainApp extends StatelessWidget {
                 ],
               ),
               Center(
-                child: NumberButton(
-                  controller: num1,
-                  controller2: num2,
-                  labelNumber: '0',
+                child: Expanded(
+                  child: NumberButton(
+                    controller: num1,
+                    controller2: num2,
+                    labelNumber: '0',
+                  ),
                 ),
               ),
               const SizedBox(height: 16.0),
               Center(
-                child: ActionButton(
-                  result: result,
-                  number1: num1,
-                  number2: num2,
-                  labelAction: 'CLEAR',
+                child: Expanded(
+                  child: ActionButton(
+                    result: result,
+                    number1: num1,
+                    number2: num2,
+                    labelAction: 'CLEAR',
+                  ),
                 ),
               ),
               const SizedBox(height: 16.0),
