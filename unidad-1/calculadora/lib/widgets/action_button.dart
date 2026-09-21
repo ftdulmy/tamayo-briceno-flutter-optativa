@@ -47,10 +47,6 @@ class _ActionButtonState extends State<ActionButton> {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: setAction,
-      style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.orange,
-        foregroundColor: Colors.white,
-      ),
       child: Text(widget.labelAction),
     );
   }

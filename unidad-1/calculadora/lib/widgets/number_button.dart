@@ -31,10 +31,6 @@ class _NumberButtonState extends State<NumberButton> {
 
     return ElevatedButton(
       onPressed: setNumber,
-      style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.orange,
-        foregroundColor: Colors.white,
-      ),
       child: Text(widget.labelNumber),
     );
   }
