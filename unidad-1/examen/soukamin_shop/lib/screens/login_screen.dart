@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:soukamin_shop/api/users.dart';
-import 'package:soukamin_shop/themes/text_h1.dart';
+import 'package:soukamin_shop/themes/app_theme.dart';
 import 'package:soukamin_shop/widgets/bottom_nav_bar.dart';
 import 'package:soukamin_shop/widgets/custom_input.dart';
 
@@ -14,15 +14,17 @@ class LoginScreen extends StatelessWidget {
 
     return Scaffold(
       body: Center(
-        child: SingleChildScrollView(
+        child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(Icons.store),
                   const SizedBox(width: 8.0),
-                  Text(style: textH1Theme, "TIENDA EXAMEN"),
+                  Text(style: AppTheme.textH1, "TIENDA EXAMEN"),
                 ],
               ),
               const SizedBox(height: 16.0),

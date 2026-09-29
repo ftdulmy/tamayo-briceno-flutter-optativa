@@ -15,11 +15,8 @@ class _BottomNavigatorBarState extends State<BottomNavigatorBar> {
   final List<Widget> screens = const [ProductsScreen(), ShopingCartScreen()];
 
   final List<BottomNavigationBarItem> items = const [
-    BottomNavigationBarItem(icon: Icon(Icons.shop), label: 'Productos'),
-    BottomNavigationBarItem(
-      icon: Icon(Icons.shopping_basket),
-      label: 'Carrito',
-    ),
+    BottomNavigationBarItem(icon: Icon(Icons.store), label: 'Productos'),
+    BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: 'Carrito'),
   ];
 
   @override
