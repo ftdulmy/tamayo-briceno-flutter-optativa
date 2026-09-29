@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:soukamin_shop/themes/text_h1.dart';
 
 class AppTheme {
   static const colorPrimary = Colors.orange;
@@ -33,6 +34,15 @@ class AppTheme {
         backgroundColor: colorPrimary,
         contentTextStyle: TextStyle(color: Colors.white),
       ),
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+        backgroundColor: colorPrimary,
+        selectedIconTheme: IconThemeData(color: colorSecondary),
+        unselectedIconTheme: IconThemeData(color: Colors.white),
+        selectedItemColor: colorSecondary,
+        unselectedItemColor: Colors.white,
+      ),
     );
   }
+
+  static final TextStyle textH1 = textH1Theme;
 }
