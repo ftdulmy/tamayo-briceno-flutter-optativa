@@ -10,7 +10,7 @@ Future<List<dynamic>> fetchProducts() async {
   if (response.statusCode == 200) {
     return jsonDecode(response.body);
   }
-  throw Exception('Error al cargar usuarios');
+  throw Exception('Error al cargar productos');
 }
 
 Future<dynamic> fetchProduct(int id) async {
@@ -21,5 +21,5 @@ Future<dynamic> fetchProduct(int id) async {
   if (response.statusCode == 200) {
     return jsonDecode(response.body);
   }
-  throw Exception('Error al cargar los productos');
+  throw Exception('Error al cargar el producto');
 }

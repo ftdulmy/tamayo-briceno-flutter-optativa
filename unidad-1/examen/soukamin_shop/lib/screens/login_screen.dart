@@ -4,13 +4,43 @@ import 'package:soukamin_shop/themes/app_theme.dart';
 import 'package:soukamin_shop/widgets/bottom_nav_bar.dart';
 import 'package:soukamin_shop/widgets/custom_input.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     TextEditingController user = TextEditingController();
     TextEditingController password = TextEditingController();
+
+    Future<void> iniciarSesion() async {
+      if (user.text.trim().isEmpty || password.text.isEmpty) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Rellena todos los campos')),
+        );
+        return;
+      }
+      try {
+        await loginUser(username: user.text.trim(), password: password.text);
+
+        if (!context.mounted) return;
+
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const BottomNavigatorBar()),
+        );
+      } catch (e) {
+        if (!context.mounted) return;
+
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Usuario o contraseña incorrectas')),
+        );
+      }
+    }
 
     return Scaffold(
       body: Center(
@@ -33,14 +63,7 @@ class LoginScreen extends StatelessWidget {
               CustomInput(controller: password, labelText: "Contraseña"),
               const SizedBox(height: 16.0),
               ElevatedButton(
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const BottomNavigatorBar(),
-                    ),
-                  );
-                },
+                onPressed: iniciarSesion,
                 child: const Text("Enviar"),
               ),
             ],

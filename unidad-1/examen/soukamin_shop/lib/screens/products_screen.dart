@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:soukamin_shop/api/products.dart';
 import 'package:soukamin_shop/screens/products_details_screen.dart';
+import 'package:soukamin_shop/widgets/list_custom.dart';
 
 class ProductsScreen extends StatelessWidget {
   const ProductsScreen({super.key});
@@ -26,14 +27,11 @@ class ProductsScreen extends StatelessWidget {
             itemCount: products.length,
             itemBuilder: (context, index) {
               final product = products[index];
-              return ListTile(
-                leading: SizedBox(
-                  width: 60,
-                  height: 60,
-                  child: Image.network(product['image'], fit: BoxFit.contain),
-                ),
-                title: Text(product['title']),
-                subtitle: Text('${product['category']} - ${product['price']}'),
+
+              return ListCustom(
+                image: product['image'],
+                titleProduct: product['title'],
+                subtitleProduct: '${product['category']} - ${product['price']}',
                 onTap: () {
                   Navigator.push(
                     context,
